@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
-    
+    public AudioClip AudioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class MainMenu : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log("started");
+        
 
         bool Lctrl = Input.GetKey(KeyCode.LeftControl);
         bool enter = Input.GetKey(KeyCode.Return);
