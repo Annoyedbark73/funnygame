@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
+
+    public Animator Animator;
     public AudioClip AudioClip;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(Transition());
         Debug.Log("started");
         
 
@@ -72,10 +74,18 @@ public class MainMenu : MonoBehaviour
             print("e");
             SceneManager.LoadScene(31);
         }
-
+        
     }
 
+    IEnumerator Transition()
+    {
 
+        Animator.SetTrigger("Pls");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 
 
