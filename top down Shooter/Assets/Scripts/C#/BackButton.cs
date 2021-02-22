@@ -26,6 +26,16 @@ public class BackButton : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
     }
 
+    public void Level1()
+    {
+
+        SceneManager.LoadScene(1);
+    }
+
+    public void loadLevel()
+    {
+        SceneManager.LoadScene(2);
+    }
     /* Verse 1:
    It's not FlingSmash, Geist, or Burnout Crash
    Not Mario Party 6 or Ultra Smash
